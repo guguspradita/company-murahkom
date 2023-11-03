@@ -1,132 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-}
-
-.wrapper-body{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #f7f7f7;
-  padding: 0 10px;
-  background-image: url("../img/logo-murahkom.png");
-  background-position: center;
-  background-size: 20%;
-}
-
-.wrapper-body::before {
-  content: ' ';
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(0,0,0,0.3);
-}
-
-.wrapper{
-  position: relative;
-  background: #fff;
-  max-width: 450px;
-  width: 100%;
-  border-radius: 16px;
-  /* box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-              0 32px 64px -48px rgba(0,0,0,0.5); */
-              box-shadow: 10px 10px 20px rgba(0,0,0,0.5),
-              -10px -10px 20px  rgba(0,0,0,0.5);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
 }
 
 /* Login & Signup Form CSS Start */
-.form{
-  padding: 25px 30px;
+.main-content {
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    margin: 5em auto;
+    display: flex;
 }
-.form header{
-  font-size: 25px;
-  font-weight: 600;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
+
+.company__info {
+    background-color: #0b51ac;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
 }
-.form form{
-  margin: 20px 0;
+.fa-laptop-code {
+    font-size: 3em;
 }
-.form form .error-text{
-  color: #721c24;
-  padding: 8px 10px;
-  text-align: center;
-  border-radius: 5px;
-  background: #f8d7da;
-  border: 1px solid #f5c6cb;
-  /* margin-bottom: 10px; */
-  /* display: none; */
+@media screen and (max-width: 640px) {
+    .main-content {
+        width: 90%;
+    }
+    .company__info {
+        display: none;
+    }
+    .login_form {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
 }
-.form form .name-details{
-  display: flex;
+@media screen and (min-width: 642px) and (max-width: 800px) {
+    .main-content {
+        width: 75%;
+    }
 }
-.form .name-details .field:first-child{
-  margin-right: 10px;
+.row a {
+    text-decoration: none;
 }
-.form .name-details .field:last-child{
-  margin-left: 10px;
+.row > h2 {
+    color: #0b51ac;
 }
-.form form .field{
-  display: flex;
-  margin-bottom: 10px;
-  flex-direction: column;
-  position: relative;
+.login_form {
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
-.form form .field label{
-  margin-bottom: 2px;
+form {
+    padding: 0 2em;
 }
-.form form .input input{
-  height: 40px;
-  width: 100%;
-  font-size: 16px;
-  padding: 0 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.form__input {
+    width: 100%;
+    border: 0px solid transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #aaa;
+    padding: 1em 0.5em 0.5em;
+    padding-left: 2em;
+    outline: none;
+    margin: 1.5em auto;
+    transition: all 0.5s ease;
 }
-.form form .field input{
-  outline: none;
+.form__input:focus {
+    border-bottom-color: #0b51ac;
+    box-shadow: 0 0 5px rgba(0, 80, 80, 0.4);
+    border-radius: 4px;
 }
-.form form .image input{
-  font-size: 17px;
+.btn {
+    transition: all 0.5s ease;
+    border-radius: 30px;
+    color: #0b51ac;
+    font-weight: 600;
+    background-color: #fff;
+    border: 1px solid #0b51ac;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
 }
-.form form .button input{
-  height: 45px;
-  border: none;
-  color: #fff;
-  font-size: 17px;
-  background: #064AB8;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 13px;
+.btn:hover,
+.btn:focus {
+    background-color: #0b51ac;
+    color: #fff;
 }
-.form form .field i{
-  position: absolute;
-  right: 15px;
-  top: 70%;
-  color: #ccc;
-  cursor: pointer;
-  transform: translateY(-50%);
-}
-.form form .field i.active::before{
-  color: #333;
-  content: "\f070";
-}
-.form .link{
-  text-align: center;
-  margin: 10px 0;
-  font-size: 17px;
-}
-.form .link a{
-  color: #333;
-}
-.form .link a:hover{
-  text-decoration: underline;
-}
+/* End Style Login */

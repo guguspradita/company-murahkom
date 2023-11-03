@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Password;
 
 class LoginController extends Controller
 {
@@ -17,7 +18,7 @@ class LoginController extends Controller
     {
         $credentials = $request->validate([
             'email' => 'required|email:dns',
-            'password' => 'required'
+            'password' => ['required', Password::min(6)]
         ]);
 
         if (Auth::attempt($credentials)) {
@@ -27,7 +28,6 @@ class LoginController extends Controller
         } else {
             return back()->with('loginError', 'Email or Password is Incorrect!');
         }
-
     }
 
     public function logout(Request $request)
